@@ -942,7 +942,7 @@ services:
       - GOTRUE_DB_DRIVER=postgres
       - GOTRUE_DB_DATABASE_URL=postgres://supabase_auth_admin:${SERVICE_PASSWORD_POSTGRES}@${POSTGRES_HOSTNAME:-supabase-db}:${POSTGRES_PORT:-5432}/${POSTGRES_DB:-postgres}
       # The base URL your site is located at. Currently used in combination with other settings to construct URLs used in emails.
-      - GOTRUE_SITE_URL=${SERVICE_FQDN_SUPABASEKONG}
+      - GOTRUE_SITE_URL=${SITE_URL}
       # A comma separated list of URIs (e.g. "https://foo.example.com,https://*.foo.example.com,https://bar.example.com") which are permitted as valid redirect_to destinations.
       - GOTRUE_URI_ALLOW_LIST=${ADDITIONAL_REDIRECT_URLS}
       - GOTRUE_DISABLE_SIGNUP=${DISABLE_SIGNUP:-false}
@@ -992,7 +992,7 @@ services:
 
       # GOTRUE_HOOK_PASSWORD_VERIFICATION_ATTEMPT_ENABLED="true"
       # GOTRUE_HOOK_PASSWORD_VERIFICATION_ATTEMPT_URI="pg-functions://postgres/public/password_verification_attempt"
-      
+
       # Uncomment to enable common OAuth Variables
       #- 'GOTRUE_EXTERNAL_GITHUB_CLIENT_ID=${GOTRUE_EXTERNAL_GITHUB_CLIENT_ID}'
       #- 'GOTRUE_EXTERNAL_GITHUB_ENABLED=${GOTRUE_EXTERNAL_GITHUB_ENABLED}'
